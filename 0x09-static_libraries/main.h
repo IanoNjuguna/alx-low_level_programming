@@ -5,6 +5,6 @@
 #include <string.h>
 
 int _strlen(char *s);
-
+void _puts(char *str);
 
 #endif
