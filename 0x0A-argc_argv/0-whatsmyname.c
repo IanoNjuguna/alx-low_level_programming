@@ -1,5 +1,5 @@
 /**
- * main - prints name of program followed by a new line
+ * prog_name - prints name of program followed by a new line
  * @argv: argument vector
  * @argc: argument count
  *
@@ -10,7 +10,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-int main(int argc, char **argv)
+int prog_name(int argc, char **argv)
 {
 	while (argc == 1)
 	{
