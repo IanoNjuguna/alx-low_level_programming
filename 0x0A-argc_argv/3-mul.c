@@ -12,11 +12,16 @@
  */
 bool StrIntCheck(const char *str)
 {
-	int idx;
+	int idx = 0;
 
-	for (idx = 0; str[idx] != '\0' && str[idx] != '-'; idx++)
+	if (str[idx] == '-')
 	{
-		if (!isdigit((unsigned char)str[idx]))
+		idx++;
+	}
+
+	for (; str[idx] != '\0'; idx++)
+	{
+		if (!isdigit((char)str[idx]))
 		{
 			return (false);
 		}
