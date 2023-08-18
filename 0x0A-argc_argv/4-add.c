@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <ctype.h>
-#include <stdbool.h>
 #include <stdlib.h>
 #include <string.h>
 
@@ -12,22 +11,18 @@
  * Author: IanoNjuguna
  */
 
-bool StrIntCheck(const char *str)
+int StrIntCheck(const char *str)
 {
 	int idx; /* INDEX OF CHARACTER IN ARRAY */
 
 	for (idx = 0; idx < strlen(str); idx++)
 	{
-		if (isdigit((char)str[idx])) /* IS IT A DIGIT? */
+		if (!isdigit((char)str[idx])) /* IS IT A DIGIT? */
 		{
-			return (true);
-		}
-		else
-		{
-			return (false);
+			return (0);
 		}
 	}
-	return (0);
+	return (1);
 }
 
 /**
@@ -40,14 +35,14 @@ bool StrIntCheck(const char *str)
  */
 int main(int argc, char *argv[])
 {
-	int temp;
-	int sum = 0;
+	int temp, idx; /* TEMPORARILY HOLDS THE ARGUMENT VECTOR */
+	int sum = 0; /* SUM OF ARGUMENT VECTORS */
 
-	for (; argv[argc] != NULL; argc++)
+	for (idx = 0; idx < argc; idx++)
 	{
-		if (StrIntCheck(argv[argc]))
+		if (StrIntCheck(argv[idx]))
 		{
-			temp = atoi(argv[argc]);
+			temp = atoi(argv[idx]); /* CONVERT ARGV TO INT */
 			sum += temp;
 
 			printf("%d\n", sum);
