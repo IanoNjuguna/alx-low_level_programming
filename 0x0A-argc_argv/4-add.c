@@ -10,12 +10,12 @@
  * Return: 0 if success, 1 if fail
  * Author: IanoNjuguna
  */
-
 int StrIntCheck(const char *str)
 {
-	int idx; /* INDEX OF CHARACTER IN ARRAY */
+	int idx; /* INDEX OF CHARACTER IN ARRAY (STRING) */
+	int len = strlen(str); /* LENGTH OF THE STRING */
 
-	for (idx = 0; idx < strlen(str); idx++)
+	for (idx = 0; idx < len; idx++)
 	{
 		if (!isdigit((char)str[idx])) /* IS IT A DIGIT? */
 		{
@@ -35,29 +35,34 @@ int StrIntCheck(const char *str)
  */
 int main(int argc, char *argv[])
 {
-	int temp, idx; /* TEMPORARILY HOLDS THE ARGUMENT VECTOR */
+	int temp; /* TEMPORARILY HOLDS THE ARGUMENT VECTOR */
 	int sum = 0; /* SUM OF ARGUMENT VECTORS */
+	int idx2 = 1; /* INDEX IN ARRAY */
 
-	for (idx = 0; idx < argc; idx++)
+	/*No arguments passed, print 0 followed by a new line*/
+	if (argc == 1) {
+		printf("%d\n", sum);
+		return (0);
+	}
+
+	while (idx2 < argc)
 	{
-		if (StrIntCheck(argv[idx]))
+	if (StrIntCheck(argv[idx2]))
 		{
-			temp = atoi(argv[idx]); /* CONVERT ARGV TO INT */
+			temp = atoi(argv[idx2]); /* CONVERT ARGV TO INT */
 			sum += temp;
-
-			printf("%d\n", sum);
 		}
 		else
 		{
 			printf("Error\n");
 			return (1);
+			break;
 		}
+		idx2++;
 	}
-
-	printf("%d\n", sum);
+	printf("%d", sum);
+	putchar('\n');
 
 	return (0);
 }
-
-
 
