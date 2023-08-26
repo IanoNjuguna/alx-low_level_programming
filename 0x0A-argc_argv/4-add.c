@@ -44,25 +44,24 @@ int main(int argc, char *argv[])
 		printf("%d\n", sum);
 		return (0);
 	}
-
-	while (idx2 < argc)
+	else
 	{
-	if (StrIntCheck(argv[idx2]))
+		while (idx2 < argc)
 		{
-			temp = atoi(argv[idx2]); /* CONVERT ARGV TO INT */
-			sum += temp;
+			if (StrIntCheck(argv[idx2]))
+			{
+				temp = atoi(argv[idx2]); /* CONVERT ARGV TO INT */
+				sum += temp;
+			}
+			else
+			{
+				printf("Error\n");
+				return (1);
+			}
+			idx2++;
 		}
-		else
-		{
-			printf("Error\n");
-			return (1);
-			break;
-		}
-		idx2++;
+		printf("%d\n", sum);
 	}
-	printf("%d", sum);
-	putchar('\n');
-
 	return (0);
 }
 
