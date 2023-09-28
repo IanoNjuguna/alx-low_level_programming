@@ -11,8 +11,12 @@
 void _puts_recursion(char *s)
 {
 	int len = strlen(s);
+	int idx;
 
-	return (s[len++]);
+	for (idx = 0; idx < len; idx++)
+	{
+		_putchar(s);
+	}
 }
 
 /**
