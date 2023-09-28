@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	int n = _strlen_recursion("Puts with recursion");
+	int n = _strlen_recursion("Corbin Coleman");
 
 	printf("%d\n", n);
 	return (0);
