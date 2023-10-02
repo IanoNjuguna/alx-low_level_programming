@@ -37,7 +37,7 @@ char *_strdup(char *str)
 		{
 			*arr = *str;
 		}
-		arr[size] = '\0';
+		arr[size + 1] = '\0';
 
 		return (str);
 	}
