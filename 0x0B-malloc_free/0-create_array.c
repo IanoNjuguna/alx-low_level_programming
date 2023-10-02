@@ -13,10 +13,21 @@ char *create_array(unsigned int size, char c)
 	if (size > 0)
 	{
 		char *arr;
+		unsigned int i;
 
-		arr = malloc(sizeof(size) + 1);
-		arr[0] = c;
+		arr = (char *)malloc(sizeof(char) * size);
 
+		if (arr == NULL)
+		{
+			/* CHECK IF MALLOC SUCCEEDED */
+			fprintf(stderr, "Memory allocation failed\n");
+			return (NULL);
+		}
+
+		for (i = 0; i < size; i++)
+		{
+			arr[i] = c;
+		}
 		return (arr);
 	}
 	else
@@ -24,3 +35,4 @@ char *create_array(unsigned int size, char c)
 		return (NULL);
 	}
 }
+
