@@ -18,8 +18,13 @@ char *_strdup(char *str)
 		unsigned int i;
 		unsigned int size;
 
-		size = (sizeof(str) + 1);
-		arr = (char *)(sizeof(str));
+		size = 0;
+		arr = (char *)malloc(sizeof(char) * (size + 1));
+
+		while (str[size] != '\0')
+		{
+			size++;
+		}
 
 		if (arr == NULL)
 		{
@@ -32,7 +37,8 @@ char *_strdup(char *str)
 		{
 			*arr = *str;
 		}
-		free(str);
+		arr[size] = '\0';
+
 		return (str);
 	}
 	else
