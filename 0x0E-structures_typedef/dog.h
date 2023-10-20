@@ -14,5 +14,6 @@ struct dog
 	float age;
 };
 
-#endif
+void print_dog(struct dog *d);
 
+#endif
