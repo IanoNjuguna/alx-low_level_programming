@@ -6,18 +6,7 @@
 #include <stdlib.h>
 #include <string.h>
 
-/**
- * struct dog - information about a dog
- * @name: dog's name
- * @owner: dog's owner
- * @age: dog's age
- */
-struct dog
-{
-	char *name;
-	char *owner;
-	float age;
-};
+void print_dog(struct dog *d);
 
 #endif
 
