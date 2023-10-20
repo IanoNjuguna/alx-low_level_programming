@@ -1,4 +1,5 @@
 #include "main.h"
+#include <stdlib.h>
 
 /**
  * print_dog - a function that prints a struct dog
@@ -9,5 +10,5 @@
 
 void print_dog(struct dog *d)
 {
-	return 
+	if 
 }
