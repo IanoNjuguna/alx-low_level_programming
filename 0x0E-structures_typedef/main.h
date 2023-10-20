@@ -6,6 +6,4 @@
 #include <stdlib.h>
 #include <string.h>
 
-void print_dog(struct dog *d);
-
 #endif
